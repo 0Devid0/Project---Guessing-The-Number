@@ -1,10 +1,27 @@
-let gameNum = 7;
+let gameNum = Math.floor(Math.random() * 10);
 
-let userNum = prompt("Guess the number from 0 to 9: ");
+let attempts = 0;
 
-while(userNum != gameNum)
+function checkGuess()
 {
-    userNum = prompt("You gusseing the wrong number, Try again: ");
-}
+    let userNum = Number(document.getElementById("guessInput").value);
+    let message = document.getElementById("message");
+    let attemptText = document.getElementById("attempts");
 
-console.log("You guess the right number & that is 7");
+    attempts++;
+
+    if(userNum === gameNum) 
+    {
+        message.innerText = "🎉 Correct! Number was " + gameNum + " 🎉";
+    }
+    else if(userNum < gameNum)
+    {
+        message.innerText = "📉 Low!";
+    }
+    else
+    {
+        message.innerText = "📈 High!";
+    }
+
+    attemptText.innerText = "Attempts: " + attempts;
+}
