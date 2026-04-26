@@ -5,11 +5,27 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Guess the number</title>
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
-        <h1>Guess The Number Game</h1>
+
+        <div class="container">
+            <h1>Guess The Number Game</h1>
+            <p>Enter a number between 0 - 9</p>
+            
+            <input type="number" id="guessInput" placeholder="Enter number">
+            <br>
+            <button onclick="checkGuess()">CHECK</button>
+
+            <p id="message"></p>
+            <p id="attempts"></p>
+        </div>
+
+        
 
         <script src="script.js"></script>
+    
     </body>
+
 </html>
